@@ -1,0 +1,54 @@
+{% assign build_time = site.time | date: "%Y%m%dT%H%M%S" %}
+{% include utils/i18n.liquid %}
+{% include utils/path.liquid %}
+
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  {% if site.google_tag_manager %}{% include google/tag-manager.html %}{% endif %}
+
+  <title>{% if depth > 0 %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }} | {{ page.title }}{% endif %}</title>
+
+  <!-- Meta -->
+  <meta charset="utf-8"/>
+  <meta http-equiv="Content-Language" content="{{ lang }}"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  {% include seo.html %}
+
+  <!-- Links -->
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:"index.html","" }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}{{ site.baseurl }}/feed.xml" />
+
+  <!-- Favicons -->
+  {% include favicons.html %}
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/assets/styles.css?{{ build_time }}">
+</head>
+
+<body class="lang-{{ lang }}{% if page.collection %} type-{{ page.collection }}{% else %}{% if depth > 0 %} page-{{ path | join: '-' }}{% else %} page-front{% endif %}{% endif %}{% if page.class %} {{ page.class }}{% endif %}">
+  {% if site.google_tag_manager %}{% include google/tag-manager-noscript.html %}{% endif %}
+
+  {{ content }}
+
+  <!-- <header id="header">
+    {% include header.html %}
+  </header> -->
+
+
+
+  <!-- <footer id="footer">
+      {% include footer.html %}
+  </footer> -->
+
+  <!-- JS -->
+  <!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="{{ site.url }}{{ site.baseurl }}/assets/scripts.js?{{ build_time }}" type="text/javascript"></script>
+  <!-- {% if site.google_analytics %}{% include google/analytics.html %}{% endif %} -->
+  <script src="{{ site.url }}{{ site.baseurl }}/assets/lunr.js?{{ timestamp }}" type="text/javascript"></script>
+  <script src="{{ site.url }}{{ site.baseurl }}/assets/search.js?{{ timestamp }}" type="text/javascript"></script>
+  {% for script in page.scripts %}<script src="{{ site.url }}{{ site.baseurl }}{{ script }}?{{ build_time }}" type="text/javascript"></script>{% endfor %}
+  <!-- {% include jekyllplus.html %} -->
+</body>
+</html>

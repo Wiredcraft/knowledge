@@ -1,0 +1,40 @@
+.page-front {
+  #hero {
+    background: $light;
+  }
+}
+
+#content {
+  .breadcrumb {
+    @include font-size($smaller);
+    line-height: 160%;
+  }
+  .navigation {
+    background: $light;
+    border-radius: $radius;
+    box-sizing: border-box;
+    float: left;
+    @include font-size($smaller);
+    line-height: 160%;
+    padding: 1.5*$space/2;
+    padding-bottom: $space - $space/4;
+    width: 25%;
+    a.active {
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li li {
+        margin-left: 1.5*$space/2;
+      }
+    }
+  }
+  .body {
+    box-sizing: border-box;
+    float: right;
+    padding-left: 2*$space;
+    width: 75%;
+  }
+}

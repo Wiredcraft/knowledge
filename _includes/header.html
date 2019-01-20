@@ -1,0 +1,12 @@
+<nav class="menu">
+  <section class="links">
+    <a href="{{ site.url }}{{ site.baseurl }}" class="title">{{ site.title }}</a>
+    {% for item in site.data.menu %}
+      {% if item.url %}<a href="{{ item.url }}">{{ t.menu[item.id] }}</a>
+      {% else %}<a href="{{ site.url }}{{ site.baseurl }}{{ t_url_prefix }}{{ item.path }}">{{ t.menu[item.id] }}</a>{% endif %}
+    {% endfor %}
+  </section>
+  <section class="languages">
+    {% include lang.html %}
+  </section>
+</nav>

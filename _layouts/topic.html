@@ -1,0 +1,15 @@
+---
+layout: page
+---
+
+{% include utils/i18n.liquid %}
+
+{% assign posts = site.posts | where: 'category', page.title %}
+<ul>
+  {% for post in posts %}
+  <li>
+    <h3 class="margin-bottom-0"><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+    <p>{{ post.content | markdownify | strip_html | strip_newlines | truncate: 140 }}</p>
+  </li>
+  {% endfor %}
+</ul>

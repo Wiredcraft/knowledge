@@ -1,0 +1,21 @@
+.card {
+  border: 1px solid $line;
+  border-radius: $radius;
+  box-shadow: $shadow-0;
+  display: inline-block;
+  padding: 1.5*$space/2;
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a.card {
+  color: inherit;
+  transition-property: box-shadow;
+  transition-duration: $ease;
+  &:hover {
+    box-shadow: $shadow-1;
+    text-decoration: none;
+  }
+}

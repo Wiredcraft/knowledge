@@ -1,0 +1,134 @@
+# Site settings
+title: The Wiredcraft Playbook
+email: hello@wiredcraft.com
+description: "How we do things at Wiredcraft, from running our team to building software."
+keywords:
+- Wiredcraft
+- playbook
+- best-practices
+
+# URL
+url: "https://playbook.wiredcraft.com"
+baseurl: ""
+
+# Google tracking (Analytics and Google Tag Manager)
+# google_tag_manager: GTM-XXXXXX
+# google_analytics: UA-XXXXXXX-X
+
+# SEO
+twitter: wiredcraft
+facebook: https://www.facebook.com/teamwiredcraft
+logo: /assets/logo.png
+image: /assets/logo.png
+social:
+  - https://www.facebook.com/teamwiredcraft
+  - https://twitter.com/wiredcraft
+  - https://www.linkedin.com/company/wiredcraft
+  - https://github.com/wiredcraft
+  - https://weibo.com/1970385015/
+
+# Sitemap (see sitemap.xml)
+sitemap:
+  changefreq: weekly
+
+# Build settings
+exclude: ['README.md', 'Makefile']
+
+# Collections
+permalink: /:categories/:title/
+collections:
+  posts:
+    permalink: /:categories/:title/
+  pages:
+    permalink: /:categories/:title/
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: topic
+      class: page
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: page
+      class: article
+  - scope:
+      path: ""
+      type: drafts
+    values:
+      layout: page
+      class: article
+
+# Plugins
+plugins: []
+
+# Multiligual
+lang:
+  - en
+
+# Jekyll+
+jekyllplus:
+  # Not useful if you're running on GitHub pages
+  # repo: Wiredcraft/jekyll-basics/master
+  folders:
+    file: files
+    image: images
+  collections:
+    pages:
+      name: Pages
+      fields:
+        - name: published
+          label: Published
+          type: switch
+          default: true
+        - name: title
+          label: Title
+          type: string
+        - name: description
+          label: Description
+          type: string
+          description: This may be used for SEO (<meta name="description"</code>).
+        - name: category
+          label: Categories
+          type: tags
+        - name: image
+          label: Image
+          type: image
+          description: This may be used as a preview in social cards.
+        - name: layout
+          label: Layout
+          type: string
+        - name: body
+          label: Body
+          type: markdown
+          autoresize: true
+    posts:
+      name: Posts
+      fields:
+        - name: published
+          label: Published
+          type: switch
+          default: true
+        - name: title
+          label: Title
+          type: string
+        - name: date
+          label: Date
+          type: date
+        - name: description
+          label: Description
+          type: string
+          description: This may be used for SEO (<meta name="description">).
+        - name: category
+          label: Categories
+          type: tags
+        - name: image
+          label: Image
+          type: image
+          description: This may be used as a preview in social cards.
+        - name: body
+          label: Body
+          type: markdown
+          autoresize: true

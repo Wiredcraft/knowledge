@@ -1,0 +1,18 @@
+{% assign topics = site.posts | group_by: 'category' %}
+<ul>
+{% for topic in topics %}
+  <li>
+    {% capture topic_url %}/{{ topic.name | slugify }}/{% endcapture %}
+    <strong><a href="{{ site.url }}{{ site.baseurl }}{{ topic_url }}"{% if page.category == topic.name or page.url == topic_url %} class="active"{% endif %}>{{ topic.name }}</a></strong>
+    {% if page.category == topic.name or page.url == topic_url %}
+    <ul>
+      {% for post in topic.items %}
+      <li>
+        <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}"{% if post.url == page.url %} class="active"{% endif %}>{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,7 @@
+{% assign posts = site.posts | where: 'lang', lang %}
+
+<ul>
+{% for post in posts %}
+<li>{% include teaser.html %}</li>
+{% endfor %}
+</ul>

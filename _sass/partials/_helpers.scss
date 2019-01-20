@@ -1,0 +1,87 @@
+.grey {
+  color: $grey;
+}
+
+.color-inherit {
+  color: inherit;
+}
+
+.small {
+  @include font-size($small);
+}
+
+.smaller {
+  @include font-size($smaller);
+}
+
+.thin {
+  font-weight: 200;
+}
+
+.regular {
+  @include font-size($regular);
+  line-height: 160%;
+}
+
+.hidden {
+  display: none;
+}
+
+.full-width {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.centered {
+  text-align: center;
+}
+
+.mobile-only {
+  @include breakpoint(mobile) {
+    display: block;
+  }
+  @include breakpoint(tablet) {
+    display: none;
+  }
+}
+
+// Border
+
+.border-bottom {
+  border-bottom: 1px solid $line;
+}
+.border-left {
+  border-left: 1px solid $line;
+}
+.border-right {
+  border-right: 1px solid $line;
+}
+.border-top {
+  border-top: 1px solid $line;
+}
+
+// list
+
+ul.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    padding: 0;
+    margin: 0;
+  }
+}

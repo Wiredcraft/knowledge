@@ -1,4 +1,31 @@
 #header {
   background: $light;
-  padding: $space/2 $space;
+  display: table;
+  width: 100%;
+  .wrapper {
+    display: table-row;
+  }
+  a {
+    color: inherit;
+  }
+  .cell {
+    display: table-cell;
+    padding: $space/2 $space;
+    &:first-child,
+    &:last-child {
+      white-space: nowrap;
+    }
+    &:first-child {
+      padding-right: 0;
+    }
+    &:last-child {
+      padding-left: 0;
+    }
+  }
+  .cell-home {
+    font-weight: bold;
+  }
+  .cell-search {
+    width: 100%;
+  }
 }

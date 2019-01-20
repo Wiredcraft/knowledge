@@ -39,17 +39,17 @@
         a {
           color: inherit;
           display: block;
-          padding: 1.5*$space/2 $space;
+          padding: $space/2 1.5*$space/2;
           &:hover {
             background: $light;
             text-decoration: none;
           }
         }
         h3 {
-          margin-bottom: $space/4;
+          font-size: inherit;
+          margin-bottom: 0;
         }
         p {
-          color: $grey;
           margin-bottom: 0;
         }
       }

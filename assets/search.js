@@ -11,7 +11,7 @@ var Search = function(params) {
   else {
     this.resultsEl = document.createElement('div');
     this.resultsEl.classList.add('search-results');
-    this.resultsEl.innerHTML = '<p class="default">Search by keywords</p>';
+    this.resultsEl.innerHTML = '<p class="default">Type in keywords</p>';
     this.el.after(this.resultsEl);
   }
   this.url = params.url;
@@ -39,7 +39,7 @@ Search.prototype.init = function() {
           that.display();
         }
         else {
-          that.resultsEl.innerHTML = '';
+          this.resultsEl.innerHTML = '<p class="default">Type in keywords</p>';
         }
       });
     }

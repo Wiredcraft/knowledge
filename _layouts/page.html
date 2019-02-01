@@ -18,9 +18,10 @@ layout: default
       </div>
     </div>
     <div class="cell cell-links">
-      <a>Slack</a>
-      <a>GitHub</a>
-      <a>About</a>
+      {% for item in site.data.menu %}
+        {% if item.url %}<a href="{{ item.url }}">{{ t.menu[item.id] }}</a>
+        {% else %}<a href="{{ site.url }}{{ site.baseurl }}{{ t_url_prefix }}{{ item.path }}">{{ t.menu[item.id] }}</a>{% endif %}
+      {% endfor %}
     </div>
   </div>
 </header>

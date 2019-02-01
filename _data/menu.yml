@@ -1,4 +1,4 @@
-- id: home
-  path: /
 - id: github
-  url: https://github.com/Wiredcraft/jekyll-basics
+  url: https://github.com/Wiredcraft/knowledge
+- id: help
+  url: https://github.com/Wiredcraft/knowledge#readme
